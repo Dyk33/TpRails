@@ -4,7 +4,7 @@ require 'yajl'
 
 class DashboardsController < ApplicationController
 	def index
-    	@dashboard = Dashboard.all
+    	@dashboards = Dashboard.all
   	end
 
 	def show
@@ -19,14 +19,15 @@ class DashboardsController < ApplicationController
   	def create
   		@dashboard =Dashboard.new(params.require(:dashboard).permit(:title, :dateArchive))
   		print @dashboard
+  		print @dashboard.dateArchive
   		@dashboard.save
 
 		gz = open('http://data.githubarchive.org/2015-01-01-12.json.gz')
 		js = Zlib::GzipReader.new(gz).read
  
-		Yajl::Parser.parse(js) do |event|
-			print event
-		end 
+		#Yajl::Parser.parse(js) do |event|
+			#print event
+		#end 
 		redirect_to @dashboard
   
    	end
