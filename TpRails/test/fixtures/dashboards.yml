@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  dateArchive: 2015-03-21 14:39:15
+
+two:
+  title: MyString
+  dateArchive: 2015-03-21 14:39:15

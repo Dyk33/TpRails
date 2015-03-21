@@ -1,0 +1,17 @@
+<h1>Listing dashboard</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+  </tr>
+ 
+  <% @dashboards.each do |dashboard| %>
+    <tr>
+      <td><%= dashboard.title %></td>
+      <td><%= dashboard.dateArchive %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New dashboard', new_dashboard_path %>

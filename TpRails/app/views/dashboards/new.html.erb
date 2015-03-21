@@ -1,0 +1,19 @@
+<h1>New Dashboard</h1>
+
+<%= form_for :article, url: articles_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :dateArchive %><br>
+    <%= f.text_area :dateArchive %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', dashboards_path %>
