@@ -5,11 +5,12 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: tp_rails_development
+      #database: tp_rails_development
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
-      hosts:
-        - localhost:27017
+      #hosts:
+       # - localhost:27017
+      uri: mongodb://tprails:ingesup33@ds031641.mongolab.com:31641/tprails
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
