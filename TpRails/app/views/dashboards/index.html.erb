@@ -5,13 +5,15 @@
     <th>Title</th>
     <th>Date</th>
   </tr>
- 
-  <% @dashboards.each do |dashboard| %>
+ <% if !@dashboards.nil?
+    @dashboards.each do |dashboard| %>
     <tr>
       <td><%= dashboard.title %></td>
       <td><%= dashboard.dateArchive %></td>
     </tr>
-  <% end %>
+  <% end
+ end %>
+  
 </table>
 
 <%= link_to 'New dashboard', new_dashboard_path %>
