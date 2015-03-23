@@ -1,5 +1,7 @@
 <h1>Listing dashboard</h1>
  
+ <%= link_to 'New dashboard', new_dashboard_path %>
+
 <table>
   <tr>
     <th>Title</th>
@@ -11,10 +13,11 @@
       <td><%= dashboard.title %></td>
       <td><%= dashboard.dateArchive %></td>
       <td><%= link_to 'Show', dashboard_path(dashboard) %></td>
+      <td><%= link_to 'Destroy', dashboard_path(dashboard),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end
- end %>
-  
+ end %>  
 </table>
 
-<%= link_to 'New dashboard', new_dashboard_path %>
