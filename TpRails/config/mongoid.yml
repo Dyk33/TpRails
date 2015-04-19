@@ -5,7 +5,7 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      #database: tp_rails_development
+      database: tprails
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       #hosts:
@@ -19,7 +19,7 @@ development:
         # Change the default consistency model to primary, secondary.
         # 'secondary' will send reads to secondaries, 'primary' sends everything
         # to master. (default: primary)
-        # read: secondary_preferred
+        #read: secondary
 
         # How many times Moped should attempt to retry an operation after
         # failure. (default: The number of nodes in the cluster)
@@ -59,9 +59,10 @@ development:
 test:
   sessions:
     default:
-      database: tp_rails_test
+      #database: tp_rails_test
       hosts:
         - localhost:27017
+      #uri: mongodb://tprails:ingesup33@ds031641.mongolab.com:31641/tprails
       options:
         read: primary
         # In the test environment we lower the retries and retry interval to
