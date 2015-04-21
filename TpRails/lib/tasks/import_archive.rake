@@ -10,7 +10,7 @@ namespace :import_archive do
 	task :import do
 		#YAML::ENGINE.yamler = 'syck'
 		#Mongoid.load!(File.join('config', 'mongoid.yml'), :development)
-		
+		Archive.delete_all
 		compteur = 1
  
 		while (compteur < 23)
@@ -19,8 +19,9 @@ namespace :import_archive do
         	js = Zlib::GzipReader.new(gz).read
         
 	        Yajl::Parser.parse(js) do |event|
-	          Archive.create(JSON.parse(event.to_json))
-	          Archive.save
+	          archive = Archive.new(JSON.parse(event.to_json))
+	          archive.created_at = archive.created_at.to_date
+	          archive.save
 	        end 
 		  	compteur += 1
 		end
