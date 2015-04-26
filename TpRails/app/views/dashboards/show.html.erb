@@ -1,3 +1,8 @@
+<script src="//www.google.com/jsapi"></script>
+<script src="../chartkick.js"></script>
+
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
 <p>
   <strong>Title:</strong>
   <%= @dashboard.title %>
@@ -7,5 +12,7 @@
   <strong>Hour :</strong>
   <%= @dashboard.dateArchive %><p> h</p>
 </p>
+
+<%= pie_chart @archives.group(:type).count %>
 
 <%= link_to 'Back', dashboards_path %>
